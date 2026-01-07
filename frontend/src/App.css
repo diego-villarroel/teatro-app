@@ -1,0 +1,97 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 0 2em 1em 2em;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 8px;
+  /* padding: 20px; */
+  background-color: var(--app-bg);
+  border: 1px solid var(--border-main);
+  border-radius: 16px;
+  max-height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+header {
+  grid-column: 1 / span 5;
+  grid-row: 1 / span 1;
+  background-color: var(--item-c1);
+  color: var(--text-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px dashed #94a3b8;
+}
+
+.actividad {
+  grid-column: 1 / span 5;
+  grid-row: 2 / span 9;
+  background-color: var(--item-c2);
+  color: var(--text-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px dashed #94a3b8;
+}
+
+.footer {
+  grid-column: 1 / span 5;
+  grid-row: 11 / span 1;
+  background-color: var(--item-c3);
+  color: var(--text-title);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px dashed #94a3b8;
+}

@@ -1,0 +1,72 @@
+.teatro-dash {
+    min-width: 80%;
+    padding: 0;
+}
+
+.teatro-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.teatro-table thead {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.teatro-table th {
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.teatro-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.estado-0 {
+  background-color: red;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2rem;
+  margin: auto;
+}
+
+.estado-1 {
+  background-color: orange;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2rem;
+  margin: auto;
+}
+
+.estado-2 {
+  background-color: yellow;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2rem;
+  margin: auto;
+}
+
+.estado-3 {
+  background-color: rgb(90, 212, 34);
+  font-weight: bold;
+  border-radius: 50%;
+  width: 2rem;
+  margin: auto;
+}
+
+.estado-4 {
+  background-color: green;
+  border-radius: 50%;
+  width: 2rem;
+  margin: auto;
+}
