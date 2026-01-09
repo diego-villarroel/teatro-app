@@ -1,3 +1,5 @@
+import './Login.css'
+
 export const Login = () => {
   return (
     <div className="login">
@@ -8,7 +10,7 @@ export const Login = () => {
         </div>
         <div className="campo">
           <label htmlFor="pass">Clave:</label>
-          <input type="password" id="pass" className="pass" />
+          <input type="password" id="pass" className="pass" placeholder='clave123'/>
         </div>
         <button type="button">Login</button>
       </form>

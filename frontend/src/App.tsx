@@ -1,7 +1,8 @@
-import './App.css'
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 // import { Login } from './components/Login/Login';
-// import { Dashboard } from './components/Dashboard/Dashboard';
+import { Dashboard } from './components/Dashboard/Dashboard';
 import { TeatroDash } from './components/TeatroDash/TeatroDash';
 
 function App() {
@@ -47,10 +48,16 @@ function App() {
         <h2>SanMaApp Sonidero</h2>
       </header>
       <div className="actividad">
-        {/* <Dashboard></Dashboard> */}
-        <TeatroDash teatroData={teatro} ></TeatroDash>
+        {/* <Login></Login> */}
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Dashboard></Dashboard>}>
+            </Route>
+            <Route path='/admin-teatro' element={<TeatroDash teatroData={teatro} ></TeatroDash>}>
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </div>
-      {/* <Login></Login> */}
       <Footer></Footer>
     </div>
   )

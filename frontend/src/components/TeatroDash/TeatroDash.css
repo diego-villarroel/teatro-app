@@ -26,10 +26,17 @@
   border-bottom: 2px solid #ddd;
 }
 
+.teatro-table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.teatro-table tr:last-child {
+  border-bottom: none;
+}
+
 .teatro-table td {
   padding: 12px 15px;
   text-align: center;
-  border-bottom: 1px solid #ddd;
 }
 
 .estado-0 {

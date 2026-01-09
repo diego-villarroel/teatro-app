@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 // Definir una interfaz para el teatro
 interface Teatro {
   nombre: string;
@@ -20,7 +22,7 @@ export const TeatroCard = ({teatro}: TeatroProps) => {
       <p>Consolas: {teatro.consolas} || Mics: {teatro.mics} || Cajas: {teatro.cajas}</p>
       <p>Personal: {teatro.personal}</p>
       <p>Otros Elementos: {teatro.otros}</p>
-      <button>Ingresar</button>
+      <Link to={'/admin-teatro'}><button>Ingresar</button></Link>
     </div>
   );
 }

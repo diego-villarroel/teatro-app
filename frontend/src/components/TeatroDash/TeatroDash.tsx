@@ -1,4 +1,5 @@
-import './TeatroDash.css'
+import './TeatroDash.css';
+import { Link } from 'react-router-dom';
 
 interface AudioElem {
   marca: String,
@@ -29,6 +30,7 @@ export const TeatroDash = ({teatroData} : Props) => {
             <th>Modelo</th>
             <th>Cantidad</th>
             <th>Estado</th>
+            <th>Accion</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,7 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{mic.modelo}</td>
               <td>{String(mic.cantidad)}</td>
               <td><div className={`estado-${mic.estado}`}>&nbsp;</div></td>
+              <td><button>Detalle</button></td>
             </tr>
           ))}
           {teatroData.consolas.map((consola, index) => (
@@ -46,6 +49,7 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{consola.modelo}</td>
               <td>{String(consola.cantidad)}</td>
               <td><div className={`estado-${consola.estado}`}>&nbsp;</div></td>
+              <td><button>Detalle</button></td>
             </tr>
           ))}
           {teatroData.cajas.map((caja, index) => (
@@ -54,11 +58,12 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{caja.modelo}</td>
               <td>{String(caja.cantidad)}</td>
               <td><div className={`estado-${caja.estado}`}>&nbsp;</div></td>
+              <td><button>Detalle</button></td>
             </tr>
           ))}
         </tbody>
       </table>
-
+      <Link to='/'><button>Volver</button></Link>
     </div>
   )
 }
