@@ -4,6 +4,7 @@ import { Footer } from './components/Footer/Footer';
 // import { Login } from './components/Login/Login';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { TeatroDash } from './components/TeatroDash/TeatroDash';
+import { AdminAudioElements } from './components/AdminAudioElements/AdminAudioElements';
 
 function App() {
   const teatro = {
@@ -55,6 +56,7 @@ function App() {
             </Route>
             <Route path='/admin-teatro' element={<TeatroDash teatroData={teatro} ></TeatroDash>}>
             </Route>
+            <Route path='/audio-elem' element={<AdminAudioElements></AdminAudioElements>}></Route>
           </Routes>
         </BrowserRouter>
       </div>

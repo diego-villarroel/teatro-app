@@ -1,0 +1,100 @@
+.form-audio-elem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-audio-elem > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-audio-elem label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  letter-spacing: 0.01em;
+}
+
+.form-audio-elem input[type="text"],
+.form-audio-elem input[type="number"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: #111827;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form-audio-elem input[type="text"]:hover,
+.form-audio-elem input[type="number"]:hover {
+  border-color: #d1d5db;
+}
+
+.form-audio-elem input[type="text"]:focus,
+.form-audio-elem input[type="number"]:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-audio-elem input[type="text"]::placeholder,
+.form-audio-elem input[type="number"]::placeholder {
+  color: #9ca3af;
+}
+
+.form-audio-elem select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  color: #111827;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.25em 1.25em;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-audio-elem select:hover {
+  border-color: #d1d5db;
+}
+
+.form-audio-elem select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-audio-elem select option {
+  padding: 0.5rem;
+  color: #111827;
+}
+
+.form-audio-elem select option:disabled {
+  color: #9ca3af;
+}
+
+.form-audio-elem input[type="number"]::-webkit-inner-spin-button,
+.form-audio-elem input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-audio-elem input[type="number"] {
+  -moz-appearance: textfield;
+}

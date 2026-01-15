@@ -66,7 +66,11 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{mic.modelo}</td>
               <td>{String(mic.cantidad)}</td>
               <td><div className={`estado-${mic.estado}`}>&nbsp;</div></td>
-              <td><button onClick={() => handleOpenModal(mic)}>Detalle</button></td>
+              <td>
+                <button onClick={() => handleOpenModal(mic)}>Detalle</button>
+                <button onClick={() => handleOpenModal(mic)}>Modificar</button>
+                <button onClick={() => handleOpenModal(mic)}>Eliminar</button>
+              </td>
             </tr>
           ))}
           {teatroData.consolas.map((consola, index) => (
@@ -75,7 +79,11 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{consola.modelo}</td>
               <td>{String(consola.cantidad)}</td>
               <td><div className={`estado-${consola.estado}`}>&nbsp;</div></td>
-              <td><button onClick={() => handleOpenModal(consola)}>Detalle</button></td>
+              <td>
+                <button onClick={() => handleOpenModal(consola)}>Detalle</button>
+                <button onClick={() => handleOpenModal(consola)}>Modificar</button>
+                <button onClick={() => handleOpenModal(consola)}>Eliminar</button>
+              </td>
             </tr>
           ))}
           {teatroData.cajas.map((caja, index) => (
@@ -84,12 +92,19 @@ export const TeatroDash = ({teatroData} : Props) => {
               <td>{caja.modelo}</td>
               <td>{String(caja.cantidad)}</td>
               <td><div className={`estado-${caja.estado}`}>&nbsp;</div></td>
-              <td><button onClick={() => handleOpenModal(caja)}>Detalle</button></td>
+              <td>
+                <button onClick={() => handleOpenModal(caja)}>Detalle</button>
+                <button onClick={() => handleOpenModal(caja)}>Modificar</button>
+                <button onClick={() => handleOpenModal(caja)}>Eliminar</button>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Link to='/'><button>Volver</button></Link>
+      <div className="button-row">
+        <Link to='/audio-elem?action=add'><button>Agregar Nuevo <br /> Elemento de Audio</button></Link>
+        <Link to='/'><button>Volver</button></Link>
+      </div>
       <Modal 
         isOpen={isModalOpen} 
         onClose={handleCloseModal}

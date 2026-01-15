@@ -77,3 +77,10 @@
   width: 2rem;
   margin: auto;
 }
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
