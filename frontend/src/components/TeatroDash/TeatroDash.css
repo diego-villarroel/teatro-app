@@ -1,42 +1,47 @@
 .teatro-dash {
-    min-width: 80%;
+    min-width: 95%;
+    max-width: 95%;
     padding: 0;
+}
+
+.table-container {
+  min-height: 300px;
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #ddd;
+  border-radius: 8px;
 }
 
 .teatro-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
+  margin: 0;
 }
 
 .teatro-table thead {
   background-color: #f4f4f4;
   color: #333;
+  table-layout: fixed;
 }
 
-.teatro-table th {
-  padding: 12px 15px;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 2px solid #ddd;
+.teatro-table tbody {
+  /* display: block; */
+  height: 300px;
+  overflow-y: scroll;
+  width: 100%;
 }
 
-.teatro-table tr {
+.teatro-table tbody tr {
   border-bottom: 1px solid #ddd;
 }
 
-.teatro-table tr:last-child {
+.teatro-table tbody tr:last-child {
   border-bottom: none;
 }
 
-.teatro-table td {
-  padding: 12px 15px;
-  text-align: center;
+.codi-cell {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
 }
 
 .estado-0 {
@@ -83,4 +88,74 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Tabs Styles */
+.tabs-container {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.tabs-header {
+  display: flex;
+  /* gap: 0.5rem; */
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  top: 2px;
+  /* z-index: -1; */
+}
+
+.tab-button:hover {
+  color: #374151;
+  /* color: #f9fafb; */
+}
+
+.tab-button.active {
+  color: #6366f1;
+  background-color: #333;
+  border-bottom-color: #6366f1;
+  font-weight: 600;
+}
+
+.tabs-content {
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.tab-panel {
+  width: 85%;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.button-col {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

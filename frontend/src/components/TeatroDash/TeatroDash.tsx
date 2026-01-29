@@ -1,124 +1,111 @@
 import './TeatroDash.css';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Modal } from '../Modal/Modal';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { getSalas, getTeatro } from '../../services/teatros';
+import { TablaAudioElements } from '../TablaAudioElements/TablaAudioElements';
+import { TablaPersonal } from '../TablaPesronal/TablaPersonal';
+import { Codi } from '../Codi/Codi';
 
-interface AudioElem {
-  marca: String,
-  modelo: String,
-  cantidad: Number,
-  estado: Number
+interface Teatro {
+  id: number;
+  nombre: string
 }
 
-interface Data {
-  nombre: String,
-  mics: Array<AudioElem>,
-  consolas: Array<AudioElem>,
-  cajas: Array<AudioElem>,
+interface Sala {
+  id: number;
+  nombre: string
 }
 
-interface Props {
-  teatroData : Data;
-}
+export const TeatroDash = () => {
+  const [activeTab, setActiveTab] = useState<'elementos' | 'personal' | 'CODI'>('elementos');
+  
+  const teatro_id = useParams();
+  const [teatro, setTeatro ] = useState<Teatro | null>(null);
+  const [salas, setSalas] = useState([]);
 
-export const TeatroDash = ({teatroData} : Props) => {
-  const [selectedItem, setSelectedItem] = useState<AudioElem | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  useEffect(() => {  
+    if (!teatro_id.teatroId) {
+      console.error('teatroId no encontrado en la URL');
+      return;
+    }
+    
+    const teatroIdNum = parseInt(teatro_id.teatroId);
+    if (isNaN(teatroIdNum)) {
+      console.error('teatroId no es un número válido');
+      return;
+    }
+    
+    getTeatro(teatroIdNum).then((teatro) => {
+      setTeatro(teatro);
+    });
+    getSalas(teatroIdNum).then((new_salas) => {
+      setSalas(new_salas);
+    })
+  }, [teatro_id]);
 
-  const handleOpenModal = (item: AudioElem) => {
-    setSelectedItem(item);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedItem(null);
-  };
-
-  const getEstadoTexto = (estado: Number): string => {
-    const estados: { [key: number]: string } = {
-      1: 'Muy Malo',
-      2: 'Malo',
-      3: 'Regular',
-      4: 'Bueno',
-      5: 'Excelente'
-    };
-    return estados[Number(estado)] || 'Desconocido';
-  };
-
+   // Validar que teatro no sea null antes de renderizar
+   if (!teatro) {
+    return (
+      <div className="teatro-dash">
+        <p>Cargando...</p>
+      </div>
+    );
+  }  
+  
   return (
     <div className="teatro-dash">
-      <h3>{teatroData.nombre}</h3>
-      <table className="teatro-table">
-        <thead>
-          <tr>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Cantidad</th>
-            <th>Estado</th>
-            <th>Accion</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teatroData.mics.map((mic, index) => (
-            <tr key={index}>
-              <td>{mic.marca}</td>
-              <td>{mic.modelo}</td>
-              <td>{String(mic.cantidad)}</td>
-              <td><div className={`estado-${mic.estado}`}>&nbsp;</div></td>
-              <td>
-                <button onClick={() => handleOpenModal(mic)}>Detalle</button>
-                <button onClick={() => handleOpenModal(mic)}>Modificar</button>
-                <button onClick={() => handleOpenModal(mic)}>Eliminar</button>
-              </td>
-            </tr>
-          ))}
-          {teatroData.consolas.map((consola, index) => (
-            <tr key={index}>
-              <td>{consola.marca}</td>
-              <td>{consola.modelo}</td>
-              <td>{String(consola.cantidad)}</td>
-              <td><div className={`estado-${consola.estado}`}>&nbsp;</div></td>
-              <td>
-                <button onClick={() => handleOpenModal(consola)}>Detalle</button>
-                <button onClick={() => handleOpenModal(consola)}>Modificar</button>
-                <button onClick={() => handleOpenModal(consola)}>Eliminar</button>
-              </td>
-            </tr>
-          ))}
-          {teatroData.cajas.map((caja, index) => (
-            <tr key={index}>
-              <td>{caja.marca}</td>
-              <td>{caja.modelo}</td>
-              <td>{String(caja.cantidad)}</td>
-              <td><div className={`estado-${caja.estado}`}>&nbsp;</div></td>
-              <td>
-                <button onClick={() => handleOpenModal(caja)}>Detalle</button>
-                <button onClick={() => handleOpenModal(caja)}>Modificar</button>
-                <button onClick={() => handleOpenModal(caja)}>Eliminar</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h3>{teatro.nombre}</h3>
+      <div className="tabs-container">
+        <div className="tabs-header">
+          <button 
+            className={`tab-button ${activeTab === 'elementos' ? 'active' : ''}`}
+            onClick={() => setActiveTab('elementos')}
+          >
+            Elementos
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'personal' ? 'active' : ''}`}
+            onClick={() => setActiveTab('personal')}
+          >
+            Personal
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'CODI' ? 'active' : ''}`}
+            onClick={() => setActiveTab('CODI')}
+          >
+            CODI
+          </button>
+        </div>
+
+        <div className="tabs-content">
+          {activeTab === 'elementos' && (
+            <div className="tab-panel table-container">
+              <TablaAudioElements id={teatro.id} />
+            </div>
+          )}
+          
+          {activeTab === 'personal' && (
+            <div className="tab-panel table-container">
+              <TablaPersonal id={teatro.id} />
+            </div>
+          )}
+          
+          {activeTab === 'CODI' && (
+            <div className="tab-panel table-container">
+              <Codi id_teatro={teatro.id} />
+            </div>
+          )}
+          <div className="button-col">
+            <button>Todo</button>
+            {salas.map((sala: Sala) => (
+                <button style={{'margin':'1rem 0 0 0'}}>{sala.nombre}</button>
+            ))}
+          </div>
+        </div>
+      </div>
       <div className="button-row">
-        <Link to='/audio-elem?action=add'><button>Agregar Nuevo <br /> Elemento de Audio</button></Link>
         <Link to='/'><button>Volver</button></Link>
       </div>
-      <Modal 
-        isOpen={isModalOpen} 
-        onClose={handleCloseModal}
-        title={selectedItem ? `Detalle: ${selectedItem.marca} ${selectedItem.modelo}` : 'Detalle'}
-      >
-        {selectedItem && (
-          <div>
-            <p><strong>Marca:</strong> {selectedItem.marca}</p>
-            <p><strong>Modelo:</strong> {selectedItem.modelo}</p>
-            <p><strong>Cantidad:</strong> {String(selectedItem.cantidad)}</p>
-            <p><strong>Estado:</strong> {getEstadoTexto(selectedItem.estado)}</p>
-          </div>
-        )}
-      </Modal>
     </div>
   )
 }
