@@ -1,0 +1,583 @@
+{
+  "teatros": [
+    {
+      "id": 1,
+      "nombre": "San Martin"      
+    },
+    {
+      "id": 2,
+      "nombre": "Alvear"
+    },
+    {
+      "id": 3,
+      "nombre": "Sarmiento"
+    },
+    {
+      "id": 4,
+      "nombre": "La Rivera"
+    },
+    {
+      "id": 5,
+      "nombre": "Regio"
+    }
+  ],
+  "espacios": [
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "nombre": "Cunill"
+    },
+    {
+      "id": 2,
+      "teatro_id": 1,
+      "nombre": "Casa Cuberta"
+    },
+    {
+      "id": 3,
+      "teatro_id": 1,
+      "nombre": "Coronado"
+    },
+    {
+      "id": 4,
+      "teatro_id": 1,
+      "nombre": "Hall Alcon"
+    },
+    {
+      "id": 5,
+      "teatro_id": 1,
+      "nombre": "Hall Coronado"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Mic"
+    },
+    {
+      "id": 2,
+      "nombre": "Consola"
+    },
+    {
+      "id": 3,
+      "nombre": "Caja"
+    },
+    {
+      "id": 4,
+      "nombre": "Potencia"
+    },
+    {
+      "id": 5,
+      "nombre": "Otro"
+    }
+  ],
+  "elementos_audiovisuales": [
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 2,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 3,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 4,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 5,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 6,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 7,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 8,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 9,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 11,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 12,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 13,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 14,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 15,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 16,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 17,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 19,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 20,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 21,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 22,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 23,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 24,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 26,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 27,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 28,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 29,
+      "teatro_id": 1,
+      "categoria_id": 1,
+      "marca": "Shure",
+      "modelo": "SM 58",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 30,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 31,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 32,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 33,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 34,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 36,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 35,
+      "teatro_id": 1,
+      "categoria_id": 2,
+      "marca": "Yamaha",
+      "modelo": "CL 5",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 37,
+      "teatro_id": 1,
+      "categoria_id": 3,
+      "marca": "JBL",
+      "modelo": "100",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 38,
+      "teatro_id": 1,
+      "categoria_id": 4,
+      "marca": "Yamaha",
+      "modelo": "PM 3",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 39,
+      "teatro_id": 1,
+      "categoria_id": 4,
+      "marca": "Yamaha",
+      "modelo": "PM 3",
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    }
+  ],
+  "personal": [
+    {
+      "id": 1,
+      "teatro_id": 1,
+      "nombre": "Lautaro",
+      "apellido": "Gonzalez",
+      "horario":1,
+      "cargo": 1,
+      "estado": 1,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 2,
+      "teatro_id": 1,
+      "nombre": "Diego",
+      "apellido": "Villarroel",
+      "horario":1,
+      "cargo": 1,
+      "estado": 2,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    },
+    {
+      "id": 3,
+      "teatro_id": 1,
+      "nombre": "Miguel",
+      "apellido": "Álvarez",
+      "horario":1,
+      "cargo": 2,
+      "estado": 4,
+      "fecha_compra": "2026-01-14 10:00:00",
+      "fecha_mod": "2026-01-14 10:00:00"
+    }
+  ],
+  "horarios": [
+    {
+      "id": 1,
+      "nombre": "Noche",
+      "horario": "17 a 22.30",
+      "inicio": "17:00:00.0000",
+      "fin": "22:30:00.0000"
+    },
+    {
+      "id": 2,
+      "nombre": "Mediodia",
+      "horario": "12 a 18",
+      "inicio": "12:00:00.0000",
+      "fin": "18:00:00.0000"
+    },
+    {
+      "id": 3,
+      "nombre": "Mañana",
+      "horario": "08 a 14",
+      "inicio": "08:00:00.0000",
+      "fin": "14:00:00.0000"
+    }
+  ],
+  "cargos": [
+    {
+      "id": 1,
+      "nombre": "Técnico/Operador"
+    },
+    {
+      "id": 2,
+      "nombre": "Encargado"
+    },
+    {
+      "id": 3,
+      "nombre": "Gerente"
+    }
+  ],
+  "estado_personal": [
+    {
+      "id": 1,
+      "nombre": "Artístico",
+      "sueldo": "",
+      "no_citados": 3
+    },
+    {
+      "id": 2,
+      "nombre": "Contratado",
+      "sueldo": "880000",
+      "no_citados": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Transitoria",
+      "sueldo": "1100000",
+      "no_citados": 0
+    },
+    {
+      "id": 4,
+      "nombre": "Permanete",
+      "sueldo": "1200000",
+      "no_citados": 0
+    }
+  ]
+}
