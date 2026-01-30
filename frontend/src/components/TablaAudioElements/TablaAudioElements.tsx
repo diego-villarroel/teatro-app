@@ -20,23 +20,28 @@ interface AudioElem {
   estado: Number
 }
 
-export const TablaAudioElements = ({id} : {id : number}) => {
+interface TablaAudioElementsProps {
+  id: number;
+  sala: number;
+}
+
+export const TablaAudioElements = ({id, sala} : TablaAudioElementsProps) => {
   const [audioElem, setAudioElem] = useState<ElementoAV[]>([]);
   const [categorias, setCategorias] = useState();
 
-  // console.log(id);
+  console.log(sala);
   
 
   useEffect(() => {
-    getElementosAV(id).then((elem) => {
-      setAudioElem(elem);
-      // console.log(audioElem);
-      
-    });
     getCategoryElem().then((cat) => {
       setCategorias(cat);
     })
   }, []);
+  useEffect(() => {
+    getElementosAV(id, sala).then((elem) => {
+      setAudioElem(elem);      
+    });
+  }, [sala]);
 
   const [selectedItem, setSelectedItem] = useState<AudioElem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

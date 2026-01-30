@@ -9,10 +9,10 @@ interface ElementoAV {
   fecha_mod: string;
 }
 
-export const getElementosAV = async (id: number) => {
+export const getElementosAV = async (id: number, sala: number) => {
   try {    
     const response = await fetch('/data/example.json');
-    const data = await response.json();
+    const data = await response.json();    
     if (data.elementos_audiovisuales) {
       return data.elementos_audiovisuales.filter((elem: ElementoAV) => elem.teatro_id == id);
     } else {

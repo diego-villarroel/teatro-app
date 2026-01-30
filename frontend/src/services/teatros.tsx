@@ -39,14 +39,16 @@ export const getTeatro = async (id_teatro: any) => {
   }
 }
 
-export const getSalas = async (id_teatro: any) => {
+export const getSalas = async (id_teatro: any, sala: number) => {
   try {
     const response = await fetch('/data/example.json');
     const data = await response.json();
-    if (data.espacios) {   
-      console.log(data.espacios.filter((espacio: any) => espacio.teatro_id == id_teatro));
-         
-      return data.espacios.filter((espacio: any) => espacio.teatro_id == id_teatro);
+    if (data.espacios) {
+      if (sala != 0) {
+        return data.espacios.filter((espacio: any) => espacio.teatro_id == id_teatro && espacio.id == sala);
+      } else {
+        return data.espacios.filter((espacio: any) => espacio.teatro_id == id_teatro);
+      }
     } else {
       return [];
     }

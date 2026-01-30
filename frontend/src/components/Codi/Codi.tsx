@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { getSalas } from "../../services/teatros";
 
 interface CodiProps {
-  id_teatro: number
+  id_teatro: number,
+  sala: number
 }
 
-export const Codi = ({id_teatro }: CodiProps) => {
+export const Codi = ({id_teatro, sala }: CodiProps) => {
   const [salas, setSalas] = useState([]);
 
   useEffect(() => {
-    getSalas(id_teatro).then((new_salas) => {
+    getSalas(id_teatro, sala).then((new_salas) => {
       setSalas(new_salas);
     })
-  }, [])
+  }, [sala])
   return (
     <>
       <table className="teatro-table">

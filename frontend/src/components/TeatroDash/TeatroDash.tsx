@@ -18,6 +18,7 @@ interface Sala {
 
 export const TeatroDash = () => {
   const [activeTab, setActiveTab] = useState<'elementos' | 'personal' | 'CODI'>('elementos');
+  const [filtroSala, setFiltroSala] = useState(0);
   
   const teatro_id = useParams();
   const [teatro, setTeatro ] = useState<Teatro | null>(null);
@@ -38,10 +39,14 @@ export const TeatroDash = () => {
     getTeatro(teatroIdNum).then((teatro) => {
       setTeatro(teatro);
     });
-    getSalas(teatroIdNum).then((new_salas) => {
+    getSalas(teatroIdNum, 0).then((new_salas) => {
       setSalas(new_salas);
     })
-  }, [teatro_id]);
+  }, [filtroSala]);
+
+  const handleFiltro = (salaId: number) => {
+    setFiltroSala(salaId);
+  }
 
    // Validar que teatro no sea null antes de renderizar
    if (!teatro) {
@@ -80,7 +85,7 @@ export const TeatroDash = () => {
         <div className="tabs-content">
           {activeTab === 'elementos' && (
             <div className="tab-panel table-container">
-              <TablaAudioElements id={teatro.id} />
+              <TablaAudioElements id={teatro.id} sala={filtroSala}/>
             </div>
           )}
           
@@ -92,18 +97,21 @@ export const TeatroDash = () => {
           
           {activeTab === 'CODI' && (
             <div className="tab-panel table-container">
-              <Codi id_teatro={teatro.id} />
+              <Codi id_teatro={teatro.id} sala={filtroSala} />
             </div>
           )}
           <div className="button-col">
-            <button>Todo</button>
+            <button onClick={() => handleFiltro(0)}>Todo</button>
             {salas.map((sala: Sala) => (
-                <button style={{'margin':'1rem 0 0 0'}}>{sala.nombre}</button>
+                <button className='filtro_sala' style={{'margin':'.7rem 0 0 0'}} onClick={() => handleFiltro(sala.id)}>{sala.nombre}</button>
             ))}
           </div>
         </div>
       </div>
       <div className="button-row">
+        <button>Add Elemento</button>
+        <button>Add Personal</button>
+        <button>Cargar Codi</button>
         <Link to='/'><button>Volver</button></Link>
       </div>
     </div>
