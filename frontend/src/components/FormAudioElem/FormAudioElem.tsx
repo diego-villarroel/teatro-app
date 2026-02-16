@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom';
 import './FormAudioElem.css';
+import { useState } from 'react';
 
-export const FormAudioElem = () => {
+interface FormAudioElemProps {
+  accion: string;
+  teatroId?: number;
+  tipoElemento?: number;
+  marca?: string;
+  modelo?: string;
+}
+
+export const FormAudioElem = ({accion, teatroId, tipoElemento, marca, modelo}: FormAudioElemProps) => {
+  
+  const [tipoForm, setTipoForm] = useState(accion);
+
   return (
     <>
       <form action="" className="form-audio-elem">
@@ -35,12 +47,18 @@ export const FormAudioElem = () => {
           <label htmlFor="modelo">Modelo</label>
           <input type="text" placeholder="SM 57" id="modelo" name="modelo"/>
         </div>
-        <div>
+        { tipoForm === "add" && (
+          <div>
+            <label htmlFor="codigo">Código</label>
+            <input type="text" placeholder="1234" id="codigo" name="codigo"/>
+          </div>
+        )}
+        {/* <div>
           <label htmlFor="cantidad">Cantidad</label>
           <input type="number" id="cantidad" name="cantidad"/>
-        </div>
+        </div> */}
       </form>
-      <Link to={-1}> <button>Volver</button> </Link>
+      {/* <Link to={-1}> <button>Volver</button> </Link> */}
     </>
       
   )

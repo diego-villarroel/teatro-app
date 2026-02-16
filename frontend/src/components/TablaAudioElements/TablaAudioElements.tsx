@@ -8,16 +8,10 @@ interface ElementoAV {
   categoria_id: number;
   marca: string;
   modelo: string;
+  cantidad: number,
   estado: number;
   fecha_compra: string;
   fecha_mod: string;
-}
-
-interface AudioElem {
-  marca: String,
-  modelo: String,
-  cantidad: Number,
-  estado: Number
 }
 
 interface TablaAudioElementsProps {
@@ -29,7 +23,7 @@ export const TablaAudioElements = ({id, sala} : TablaAudioElementsProps) => {
   const [audioElem, setAudioElem] = useState<ElementoAV[]>([]);
   const [categorias, setCategorias] = useState();
 
-  console.log(sala);
+//   console.log(sala);
   
 
   useEffect(() => {
@@ -42,14 +36,6 @@ export const TablaAudioElements = ({id, sala} : TablaAudioElementsProps) => {
       setAudioElem(elem);      
     });
   }, [sala]);
-
-  const [selectedItem, setSelectedItem] = useState<AudioElem | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedItem(null);
-  };
   
   return (
     <>
@@ -68,9 +54,9 @@ export const TablaAudioElements = ({id, sala} : TablaAudioElementsProps) => {
           <tr key={index}>
             <td>{mic.marca}</td>
             <td>{mic.modelo}</td>
-            <td></td>
+            <td>{mic.cantidad}</td>
             <td><div className={`estado-${mic.estado}`}>&nbsp;</div></td>
-            <td></td>
+            <td><button>Modificar</button></td>
           </tr>
         ))}
       </tbody>

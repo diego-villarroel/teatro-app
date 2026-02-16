@@ -387,7 +387,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 3,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -397,7 +397,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 3,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -407,7 +407,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 3,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -417,7 +417,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 3,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -427,7 +427,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 3,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -437,7 +437,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 2,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -447,7 +447,7 @@
       "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "CL 5",
-      "estado": 4,
+      "estado": 2,
       "fecha_compra": "2026-01-14 10:00:00",
       "fecha_mod": "2026-01-14 10:00:00"
     },
@@ -464,7 +464,7 @@
     {
       "id": 38,
       "teatro_id": 1,
-      "categoria_id": 4,
+      "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "PM 3",
       "estado": 4,
@@ -474,7 +474,7 @@
     {
       "id": 39,
       "teatro_id": 1,
-      "categoria_id": 4,
+      "categoria_id": 2,
       "marca": "Yamaha",
       "modelo": "PM 3",
       "estado": 4,
