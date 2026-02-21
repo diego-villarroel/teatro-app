@@ -1,5 +1,6 @@
 import './TeatroDash.css';
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getSalas, getTeatro } from '../../services/teatros';
 import { TablaAudioElements } from '../TablaAudioElements/TablaAudioElements';
@@ -7,6 +8,7 @@ import { TablaPersonal } from '../TablaPesronal/TablaPersonal';
 import { Codi } from '../Codi/Codi';
 import { Modal } from '../Modal/Modal';
 import { FormAudioElem } from '../FormAudioElem/FormAudioElem';
+import { FormPersonal } from '../FormPersonal/FormPersonal';
 
 interface Teatro {
   id: number;
@@ -60,16 +62,18 @@ export const TeatroDash = () => {
   const [selectedItem, setSelectedItem] = useState<AudioElem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<ReactNode | null>(null);
+  const [modalTitle, setModalTitle] = useState('');
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setSelectedItem(null);
   };
 
-  const handleOpenModal = (children: any) => {
+  const handleOpenModal = (children: any, title: string) => {
     // setSelectedItem(item);
     setModalContent(children);
     setIsModalOpen(true);
+    setModalTitle(title);
   }
 
    // Validar que teatro no sea null antes de renderizar
@@ -129,19 +133,31 @@ export const TeatroDash = () => {
             {salas.map((sala: Sala) => (
                 <button className='filtro_sala' style={{'margin':'.7rem 0 0 0'}} onClick={() => handleFiltro(sala.id)}>{sala.nombre}</button>
             ))}
-            {activeTab === 'elementos' && (
-              <button className='filtro_sala' style={{'margin':'.7rem 0 0 0'}} onClick={() => handleFiltro(salas.length+1)}>Deposito</button>
-            )}
+            <button className='filtro_sala' style={{'margin':'.7rem 0 0 0'}} onClick={() => handleFiltro(salas.length+1)} disabled={activeTab !== 'elementos'}>Deposito</button>
           </div>
         </div>
       </div>
       <div className="button-row">
-       <button onClick={() => handleOpenModal(<FormAudioElem teatroId={teatro.id} />)}>+ Elemento</button>
-        <Link to={`/admin-teatro/add-personal/${teatro.id}`}><button>+ Personal</button></Link>
+        <button onClick={
+          () => handleOpenModal(
+            <FormAudioElem 
+              teatroId={teatro.id} 
+              accion='add'
+            />, 'Agregar Elemento'
+          )
+        }>+ Elemento</button>
+        <button onClick={
+          () => handleOpenModal(
+            <FormPersonal 
+              teatroId={teatro.id} 
+              accion='add'
+            />, 'Agregar Personal'
+          )
+        }>+ Personal</button>
         <button>Cargar Codi</button>
         <Link to='/'><button>Volver</button></Link>
       </div>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title=''>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={modalTitle}>
         {modalContent}
       </Modal>
     </div>
