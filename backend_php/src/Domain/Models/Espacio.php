@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\Domain\Models;
+
 class Espacio {
   private int $id;
   private string $nombre;

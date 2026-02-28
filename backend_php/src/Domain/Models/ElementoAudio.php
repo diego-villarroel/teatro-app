@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace App\Domain\Models;
+
 class ElementoAudio {
   private int $id;
   private int $teatroId;
