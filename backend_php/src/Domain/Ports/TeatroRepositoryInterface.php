@@ -12,7 +12,7 @@ interface TeatroRepositoryInterface {
    * @param int $id El ID del teatro que se desea obtener.
    * @return Teatro|null El teatro encontrado o null si no se encuentra.
    */
-  public function getTeatroById($id): ?Teatro;
+  public function getTeatroById(int $id): ?Teatro;
 
   /**
    * Agrega un nuevo teatro al sistema.

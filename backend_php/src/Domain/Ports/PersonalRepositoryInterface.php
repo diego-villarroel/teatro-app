@@ -6,20 +6,22 @@ namespace App\Domain\Ports;
 
 use App\Domain\Models\Personal;
 
+use DateTime;
+
 interface PersonalRepositoryInterface {
   /**
    * Obtiene el personal de un teatro específico.
    * @param int $id_teatro El ID del teatro para el cual se desea obtener el personal.
    * @return Personal[]
    */
-  public function getPeronalByTeatro($id_teatro): array;
+  public function getPersonalByTeatro(int $id_teatro): array;
 
   /**
    * Obtiene un personal por su ID.
    * @param int $id El ID del personal que se desea obtener.
    * @return Personal|null El personal encontrado o null si no se encuentra.
    */
-  public function getPersonalById($id): ?Personal;
+  public function getPersonalById(int $id): ?Personal;
 
   /**
    * Agrega un nuevo personal al sistema.
@@ -40,7 +42,7 @@ interface PersonalRepositoryInterface {
    * @param int $id El ID del personal que se desea eliminar.
    * @return void
    */
-  public function deletePersonal($id): void;
+  public function deletePersonal(int $id): void;
 
   /**
    * Verifica las credenciales de un personal para autenticación.
@@ -49,6 +51,13 @@ interface PersonalRepositoryInterface {
    * @return Personal|null El personal autenticado o null si las credenciales son incorrectas
    */
   public function authenticatePersonal(string $nombre, string $password): ?Personal;
+
+  /**
+   * Verifica si la sesión de un personal está activa.
+   * @param int $personalId El ID del personal cuya sesión se desea verificar.
+   * @return bool True si la sesión está activa, false en caso contrario.
+   */
+  public function isPersonalSessionActive(int $personalId): bool;
 
   /**
    * Cambia la contraseña de un personal.
@@ -64,6 +73,6 @@ interface PersonalRepositoryInterface {
    * @param int $nuevoTeatroId El ID del nuevo teatro al que se asignará el personal.
    * @return void
    */
-  public function reassignPersonalToTeatro(int $personalId, int $nuevoTeatroId): void;
+  public function reasignarPersonal(Personal $personal, int $nuevoTeatroId, int $nuevaSalaId): void;
 
 }

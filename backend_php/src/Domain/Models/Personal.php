@@ -9,6 +9,7 @@ use DateTime;
 class Personal {
   private int $id;
   private string $password;
+  private DateTime $sessionUpdate;
   private int $teatroId;
   private int $salaId;
   private string $nombre;
@@ -22,6 +23,7 @@ class Personal {
   public function __construct (
     int $id,
     string $password,
+    DateTime $sessionUpdate,
     int $teatroId,
     int $salaId,
     string $nombre,
@@ -35,6 +37,7 @@ class Personal {
   {
     $this->id = $id;
     $this->password = $password;
+    $this->activeSession = $activeSession;
     $this->teatroId = $teatroId;
     $this->salaId = $salaId;
     $this->nombre = $nombre;
@@ -52,6 +55,10 @@ class Personal {
 
   public function getPassword(): string {
     return $this->password;
+  }
+
+  public function getSessionUpdate(): DateTime {
+    return $this->sessionUpdate;
   }
 
   public function getTeatroId(): int {
