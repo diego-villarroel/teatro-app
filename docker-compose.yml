@@ -1,0 +1,21 @@
+services:
+  php:
+    build:
+      context: ./backend_php
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:80"
+    volumes:
+      - ./backend_php/src:/var/www/html/src
+      - ./backend_php/public:/var/www/html/public
+      - ./backend_php/config:/var/www/html/config
+      - php_vendor:/var/www/html/vendor
+    networks:
+      - backend_network
+
+volumes:
+  php_vendor:
+
+networks:
+  backend_network:
+    driver: bridge

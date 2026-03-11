@@ -230,4 +230,37 @@ Las implementaciones en Infrastructure expresan cómo lo hacemos
 Máxima flexibilidad y mantenibilidad
 Si ves "Repositories" en Domain en otros proyectos, probablemente es un atajo de arquitectura en capas tradicional, no hexagonal.
 
-¿Confirmamos entonces: Domain/Models + Domain/Ports para tu proyecto?
+
+
+
+
+Resumen breve: En la arquitectura hexagonal la carpeta Application/UseCases (Fase 4) contiene los casos de uso: piezas que orquestan operaciones del dominio para cumplir una necesidad de la aplicación (p. ej. "Obtener todos los teatros"). Son la capa que coordina puertos (interfaces) y entidades, aplicando reglas de aplicación, validaciones, transacciones y devolviendo resultados neutrales al transporte (no hacen JSON ni manipulan HTTP).
+
+Responsabilidades concretas:
+
+Orquestar llamadas a puertos (repositorios, servicios externos) para realizar un flujo de negocio.
+Encapsular la lógica de aplicación (qué debe hacerse y en qué orden), no la lógica de las entidades (esa vive en Domain).
+Realizar validaciones de entrada y reglas de aplicación, levantar/exponer excepciones de dominio.
+Definir límites transaccionales (abrir/cerrar transacciones si aplica).
+Recibir dependencias por constructor (inyección de TeatroRepositoryInterface, etc.) para facilitar tests y cambio de adaptadores.
+Retornar objetos/DTOs del dominio, no respuestas HTTP ni detalles de infraestructura.
+Ejemplo concreto (pseudocódigo para GetAllTeatros):
+
+Constructor: recibe un TeatroRepositoryInterface.
+Método execute():
+Llama al puerto: $teatros = $this->repo->findAll();
+Aplica reglas/filtrado/map a DTOs si hace falta.
+Retorna el resultado (array de DTOs).
+Nunca: no debe hacer echo/json_encode ni acceder a $_SERVER ni al driver de la BD.
+Diferencia con otras capas:
+
+Domain: contiene entidades y reglas de negocio puras.
+UseCases (Application): orquesta esas entidades para casos concretos de la aplicación.
+Infrastructure: implementa los puertos que UseCases llaman (BD, API externas).
+Presentation: adapta la entrada/salida (HTTP, CLI) y llama a los UseCases.
+Buenas prácticas rápidas:
+
+Un caso de uso = una responsabilidad (Single Responsibility).
+No mezclar transporte (HTTP) dentro del use case.
+Mantenerlo pequeño y testeable (unit tests que mockean los puertos).
+Devolver DTOs simples o colecciones de entidades inmutables.

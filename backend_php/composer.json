@@ -1,9 +1,12 @@
 {
-    "name": "teatro-backend",
+    "name": "teatro/backend",
+    "description": "Backend API for Teatro App",
     "autoload": {
         "psr-4": {
             "App\\": "src/"
         }
     },
-    "require": {}
+    "require": {
+        "php": ">=8.3"
+    }
 }
